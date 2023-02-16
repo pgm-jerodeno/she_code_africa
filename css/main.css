@@ -1,0 +1,561 @@
+@font-face {
+  font-family: 'Otomanopee One';
+  src: url('../fonts/OtomanopeeOne-Regular.woff2') format('woff2'),
+      url('../fonts/OtomanopeeOne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+      url('../fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+      url('../fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Otomanopee One', sans-serif;
+}
+
+.pink {
+  color: #B70569;
+}
+
+header {
+  position: relative;
+  font-family: 'Otomanopee One', sans-serif;
+  font-size: 1.25rem;
+  padding: 3rem 4rem;
+  box-shadow: 0 .3125rem .625rem hsla(0, 0%, 20%, 0.2);
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+header nav ul li {
+  margin-left: 2rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 2.75rem;
+}
+
+header nav ul li a.logo {
+  position: absolute;
+  top: 1rem;
+  left: 4rem;
+}
+
+header nav ul li .logo svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+header nav ul li:not(:nth-child(2)) a:hover {
+  color: deeppink;
+  border-bottom: .3125rem solid deeppink;
+}
+
+header nav ul li a.logo:hover .fil0 {
+  fill: deeppink;
+}
+
+header nav ul li a.logo:hover .fil2 {
+  fill: deeppink;
+}
+
+header nav ul li a.logo:hover .fil6 {
+  fill: deeppink;
+}
+
+header nav ul li:not(:nth-child(2)):active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 550px) {
+  header {
+    padding: 1.5rem;
+  }
+  header nav ul {
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav ul li a.logo {
+    position: static;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    padding: 1rem;
+  }
+  header nav ul {
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 6rem;
+  }
+  header nav ul li {
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  header nav ul li a {
+    border-bottom: none !important;
+  }
+  header nav ul li a.logo {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  header nav ul li a.logo svg {
+    margin: 0 auto;
+  }
+  header nav ul li a:hover {
+    color: deeppink;
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 800px) {
+  header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  main {
+    margin-top: 8rem;
+  }
+}
+
+main .welcome {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+main .welcome img {
+  width: 20rem;
+  flex-grow: 1;
+  margin-right: 2rem;
+}
+
+main .welcome .info {
+  width: 20rem;
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+
+main .welcome p {
+  margin: 1rem 0;
+}
+
+main .welcome .info .button-container {
+  position: relative;
+  width: max-content;
+  background-color: blue;
+  border-radius: .3125rem;
+}
+
+main .welcome .info .button {
+  display: inline-block;
+  text-align: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: .3125rem;
+  width: 5.5rem;
+  transition: 0.5s ease;
+}
+
+main .welcome .info .button a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main .welcome .info .button-helper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: hsl(240, 100%, 35%);
+  border-radius: 0 .9375rem .9375rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+main .welcome .info .button-container:hover .button {
+  background-color: hsl(240, 100%, 35%);
+  border-radius: 0.3125rem 0 0 0.3125rem;
+}
+
+main .welcome .info .button-container:hover .button-helper{
+  animation: button 0.5s ease forwards;
+}
+
+main .welcome .info .button-helper img {
+  width: 1.25rem;
+  height: 2rem;
+}
+
+@keyframes button {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+main .support {
+  background-color: lightgrey;
+  padding: 4rem 0;
+}
+
+main .support h2 {
+  width: 60%;
+  margin: 0 auto 1rem;
+}
+
+main .support .article-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem
+}
+
+main .support .article-wrapper article {
+  width: 10rem;
+  background-color: white;
+  border-radius: .625rem;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+main .support .article-wrapper article .content {
+  padding: 1rem;
+}
+
+main .support .article-wrapper article .content .title {
+  min-height: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+main .support .article-wrapper article .content .title h3 a {
+  color: black;
+}
+
+main .support .article-wrapper article .content .title h3 a:hover {
+  color: deeppink;
+}
+
+main .support .article-wrapper article .content .title svg {
+  height: 2rem;
+  float: left;
+  margin: 0.5rem 1rem 1rem 0;
+}
+
+main .support .article-wrapper article .content .money-raised {
+  margin-bottom: 1rem;
+}
+
+main .support .article-wrapper article .content .money-raised p {
+  margin-bottom: 0.5rem;
+  color: grey;
+}
+
+main .support .article-wrapper article .content .money-raised .counter {
+  width: 100%;
+  height: .3125rem;
+  background-color: lightgrey;
+  border-radius: .3125rem;
+}
+
+main .support .article-wrapper article .content .money-raised .counted {
+  height: .3125rem;
+  background-color: blue;
+  border-radius: .3125rem;
+}
+
+main .support .article-wrapper article .content p a {
+  color: black;
+}
+
+main .support .article-wrapper article .content p a:hover {
+  color: deeppink;
+}
+
+#airco {
+  width: 20%;
+}
+
+#laptops{
+  width: 40%;
+}
+
+#gatherings {
+  width: 90%;
+}
+
+footer {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  padding: 2rem 0;
+}
+
+footer img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+}
+
+footer .banner {
+  position: absolute;
+  left: 39%;
+  top: 27%;
+  transform: rotate(50deg);
+  width: 16%;
+  height: 7%;
+  background-color: #B70569;
+  overflow: hidden;
+  border-radius: .3125rem;
+}
+
+footer .banner p {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  width: max-content;
+  color: white;
+  text-transform: uppercase;
+  animation: banner 13s linear infinite;
+  font-size: 1.75rem;
+}
+
+@keyframes banner {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateX(-100%) translateY(-50%);
+    left: 0%;
+  }
+}
+
+main .about-wrapper {
+  background-image: url("../images/meeting-photo.png");
+  background-attachment: fixed;
+}
+
+main .about-wrapper .values-wrapper {
+  background-color: white;
+}
+
+main .about-wrapper .values {
+  max-width: 70%;
+  margin: 0 auto 40rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+main .about-wrapper .values p {
+  margin: 1rem 0;
+}
+
+main .about-wrapper .values p a {
+  color: black;
+}
+
+main .about-wrapper .values p a:hover {
+  color: deeppink;
+}
+
+main .about-wrapper .team-wrapper {
+  background-color: white;
+}
+
+main .about-wrapper .team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+main .about-wrapper .team h1 {
+  width: 100%;
+}
+
+main .about-wrapper .team .member {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 45%;
+  flex-grow: 1;
+}
+
+main .about-wrapper .team .member img {
+  width: 10rem;
+  height: 10rem;
+  padding: .3125rem;
+  border: .3125rem solid red;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top;
+}
+
+main .about-wrapper .team .member .credentials {
+  width: 15rem;
+}
+
+@media (max-width: 700px) {
+  main .about-wrapper .team .member {
+    display: block;
+    text-align: center;
+    width: 45%;
+  }
+  main .about-wrapper .team .member img {
+    margin: 0 auto 1rem;
+  }
+  main .about-wrapper .team .member .credentials {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+main .background-gradient {
+  background-image: linear-gradient(45deg, #9d53c5, #fac079);
+  background-attachment: fixed;
+}
+
+main .support-wrapper {
+  background-color: white;
+  margin-bottom: 0.625rem;
+}
+
+main .support-content {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+main .support-content .triangle {
+  position: relative;
+  width: 6rem;
+  height: 7rem;
+  float: left;
+  margin: 1.5rem 1rem 0 0;
+}
+
+
+main .support-content .triangle .triangle-background {
+  background-image: url("../images/triangle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  animation: triangle-rotation 10s ease infinite;
+}
+
+main .support-content .triangle .triangle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  padding: 0.75rem;
+}
+
+main .support-content .triangle .triangle-content p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 0 .3125rem hsla(0, 0%, 0%, 0.8);
+  text-align: center;
+}
+
+@keyframes triangle-rotation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 450px) {
+  main .support-content .triangle {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+main .support-content p {
+  margin: 1rem 0;
+}
+
+main .quote {
+  width: 70%;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-left: .3125rem solid black;
+}
+
+main .quote blockquote {
+  font-family: 'Otomanopee One', sans-serif;
+  font-size: 2rem;
+  color: #B70569;
+}
+
+.video-wrapper {
+  background-color: white;
+  padding: 2rem;
+}
+
+.video-wrapper video {
+  min-width: 70%;
+  margin: 0 auto;
+}
